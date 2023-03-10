@@ -83,13 +83,13 @@ $vote= $_GET["vote"];
             <h1 class="font-bold text-center pt-5 pb-3 text-3xl">Book your Hotel</h1>
             <div class="pb-5">
                 <form action="" method="GET">
-                    <label for="parking-user" class="text-lg">Parking:</label>
+                    <label for="parking-user" class="text-lg font-bold">Parking:</label>
                     <select name="parking" id="parking-user" class="p-2">
                         <option value="default">All Hotels</option>
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
-                    <label for="vote" class="text-lg pl-3">Vote:</label>
+                    <label for="vote" class="text-lg pl-3 font-bold">Vote:</label>
                     <select name="vote" id="vote" class="p-2">
                         <option value="0">All Hotels</option>
                         <option value="1">1</option>
@@ -98,7 +98,7 @@ $vote= $_GET["vote"];
                         <option value="4">4</option>
                         <option value="5" <?php if($parking === '5'):?> selected="true" <?php endif; ?>> 5</option>
                     </select>
-                    <input type="submit" value="Submit" class="bg-neutral-100 border-2 dark:border-neutral-500 rounded-md p-2">
+                    <input type="submit" value="Submit" class="bg-neutral-100 border-2 dark:border-neutral-500 rounded-md p-2 ml-3 font-bold">
                 </form>
             </div>
             <div class="flex flex-col">
