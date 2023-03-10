@@ -59,21 +59,37 @@
 		integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<!-- Style -->
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body>
 		<div class="container">
-			<ul> 
-                <?php foreach($hotels as $hotel){?> 
-                    <?php foreach ($hotel as $hotel_info){?>
 
-                        <li> <?= $hotel_info?> </li> 
-                    <?php }?>
-
-                <?php }?>
-
-            </ul>
+            <h1 class="font-bold text-center pt-5 text-lg">Prenota il tuo Hotel</h1>
+            <div class="flex flex-col p-5">
+                <table class="min-w-full text-left font-light">
+                    <thead>
+                        <tr class="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700 text-center">
+                            <th scope="col" class="p-4">Hotel </th>
+                            <th scope="col">Parcheggio</th>
+                            <th scope="col">Voto</th>
+                            <th scope="col">Distanza dal centro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <?php foreach($hotels as $hotel){?> 
+                                <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"> <?= $hotel['name']?></td>
+                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['parking']?></td>
+                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['vote']?></td>
+                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['distance_to_center'] . " " . "km" ?></td>
+                                </tr>
+                                
+                                <?php }?>
+                    </tbody>
+                </table>
+            </div>
 
 		</div>
 	
