@@ -78,10 +78,10 @@ $vote= $_GET["vote"];
 </head>
 
 <body>
-		<div class="container">
+		<div class="container w-3/4">
 
-            <h1 class="font-bold text-center pt-5 text-3xl">Book your Hotel</h1>
-            <div class="">
+            <h1 class="font-bold text-center pt-5 pb-3 text-3xl">Book your Hotel</h1>
+            <div class="pb-5">
                 <form action="" method="GET">
                     <label for="parking-user" class="text-lg">Parking:</label>
                     <select name="parking" id="parking-user" class="p-2">
@@ -101,7 +101,7 @@ $vote= $_GET["vote"];
                     <input type="submit" value="Submit" class="bg-neutral-100 border-2 dark:border-neutral-500 rounded-md p-2">
                 </form>
             </div>
-            <div class="flex flex-col p-5">
+            <div class="flex flex-col">
                 <table class="min-w-full text-left font-light">
                     <thead>
                         <tr class="border-b bg-neutral-100 dark:border-neutral-500 dark:bg-neutral-700 text-center">
