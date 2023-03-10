@@ -38,6 +38,17 @@
         ],
 
     ];
+
+$parking=null;
+if (isset ($_GET["parking"])){
+    $parking= $_GET["parking"];
+}
+
+$vote=null;
+if (isset ($_GET["vote"])){
+    $vote= $_GET["vote"];
+}
+// $vote= $_GET["vote"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -67,6 +78,26 @@
 		<div class="container">
 
             <h1 class="font-bold text-center pt-5 text-lg">Prenota il tuo Hotel</h1>
+            <div class="">
+                <form action="" method="GET">
+                    <label for="parking-user">Parking:</label>
+                    <select name="parking" id="parking-user">
+                        <option value="default"></option>
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                    <label for="vote">Vote:</label>
+                    <select name="vote" id="vote">
+                        <option value="0"></option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="2">3</option>
+                        <option value="2">4</option>
+                        <option value="2">5</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
             <div class="flex flex-col p-5">
                 <table class="min-w-full text-left font-light">
                     <thead>
@@ -79,14 +110,15 @@
                     </thead>
                     <tbody>
                             <?php foreach($hotels as $hotel){?> 
-                                <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"> <?= $hotel['name']?></td>
-                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['parking']?></td>
-                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['vote']?></td>
-                                <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['distance_to_center'] . " " . "km" ?></td>
-                                </tr>
                                 
-                                <?php }?>
+                                    <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"> <?= $hotel['name']?></td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['parking']?></td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['vote']?></td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['distance_to_center'] . " " . "km" ?></td>
+                                    </tr>
+                                
+                            <?php }?>
                     </tbody>
                 </table>
             </div>
