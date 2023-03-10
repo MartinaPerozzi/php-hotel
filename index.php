@@ -72,31 +72,33 @@ $vote= $_GET["vote"];
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 	<!-- Style -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome -->
+    
 
 </head>
 
 <body>
 		<div class="container">
 
-            <h1 class="font-bold text-center pt-5 text-lg">Book your Hotel</h1>
+            <h1 class="font-bold text-center pt-5 text-3xl">Book your Hotel</h1>
             <div class="">
                 <form action="" method="GET">
-                    <label for="parking-user">Parking:</label>
-                    <select name="parking" id="parking-user">
+                    <label for="parking-user" class="text-lg">Parking:</label>
+                    <select name="parking" id="parking-user" class="p-2">
                         <option value="default">All Hotels</option>
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
-                    <label for="vote">Vote:</label>
-                    <select name="vote" id="vote">
+                    <label for="vote" class="text-lg pl-3">Vote:</label>
+                    <select name="vote" id="vote" class="p-2">
                         <option value="0">All Hotels</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
-                        <option value="2">3</option>
-                        <option value="2">4</option>
-                        <option value="2">5</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5" <?php if($parking === '5'):?> selected="true" <?php endif; ?>> 5</option>
                     </select>
-                    <input type="submit" value="Submit">
+                    <input type="submit" value="Submit" class="bg-neutral-100 border-2 dark:border-neutral-500 rounded-md p-2">
                 </form>
             </div>
             <div class="flex flex-col p-5">
@@ -116,7 +118,7 @@ $vote= $_GET["vote"];
                                 
                                     <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"> <?= $hotel['name']?></td>
-                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['parking']?></td>
+                                    <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= ($hotel['parking'])? '&#10003;': ''?></td>
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['vote']?></td>
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['distance_to_center'] . " " . "km" ?></td>
                                     </tr>
