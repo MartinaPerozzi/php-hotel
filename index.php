@@ -39,16 +39,17 @@
 
     ];
 
-$parking=null;
-if (isset ($_GET["parking"])){
-    $parking= $_GET["parking"];
-}
+// $parking=null;
+// if (isset ($_GET["parking"])){
+//     $parking= $_GET["parking"];
+// }
 
-$vote=null;
-if (isset ($_GET["vote"])){
-    $vote= $_GET["vote"];
-}
-// $vote= $_GET["vote"];
+// $vote=null;
+// if (isset ($_GET["vote"])){
+//     $vote= $_GET["vote"];
+// }
+$parking= $_GET["parking"];
+$vote= $_GET["vote"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -77,18 +78,18 @@ if (isset ($_GET["vote"])){
 <body>
 		<div class="container">
 
-            <h1 class="font-bold text-center pt-5 text-lg">Prenota il tuo Hotel</h1>
+            <h1 class="font-bold text-center pt-5 text-lg">Book your Hotel</h1>
             <div class="">
                 <form action="" method="GET">
                     <label for="parking-user">Parking:</label>
                     <select name="parking" id="parking-user">
-                        <option value="default"></option>
+                        <option value="default">All Hotels</option>
                         <option value="1">Yes</option>
                         <option value="0">No</option>
                     </select>
                     <label for="vote">Vote:</label>
                     <select name="vote" id="vote">
-                        <option value="0"></option>
+                        <option value="0">All Hotels</option>
                         <option value="1">1</option>
                         <option value="2">2</option>
                         <option value="2">3</option>
@@ -110,6 +111,8 @@ if (isset ($_GET["vote"])){
                     </thead>
                     <tbody>
                             <?php foreach($hotels as $hotel){?> 
+
+                                <?php if(($parking === "default" && $vote ==="0") || ($hotel['parking'] === $parking) || ($hotel['vote'] >= $vote)){?>
                                 
                                     <tr class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"> <?= $hotel['name']?></td>
@@ -117,6 +120,7 @@ if (isset ($_GET["vote"])){
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['vote']?></td>
                                     <td class="whitespace-nowrap px-6 py-4 font-medium text-center"><?= $hotel['distance_to_center'] . " " . "km" ?></td>
                                     </tr>
+                                 <?php }?>
                                 
                             <?php }?>
                     </tbody>
