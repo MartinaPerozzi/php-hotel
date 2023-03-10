@@ -85,13 +85,13 @@ $vote= $_GET["vote"];
                 <form action="" method="GET">
                     <label for="parking-user" class="text-lg font-bold">Parking:</label>
                     <select name="parking" id="parking-user" class="p-2">
-                        <option value="default">All Hotels</option>
+                        <option value="default">All</option>
                         <option value="1" <?php if($parking === '1'):?> selected="true" <?php endif; ?>>Yes</option>
                         <option value="0" <?php if($parking === '0'):?> selected="true" <?php endif; ?>>No</option>
                     </select>
                     <label for="vote" class="text-lg pl-3 font-bold">Vote:</label>
                     <select name="vote" id="vote" class="p-2">
-                        <option value="0">All Hotels</option>
+                        <option value="0">All</option>
                         <option value="1"  <?php if($vote === '1'):?> selected="true" <?php endif; ?>>1</option>
                         <option value="2"  <?php if($vote === '2'):?> selected="true" <?php endif; ?>>2</option>
                         <option value="3"  <?php if($vote === '3'):?> selected="true" <?php endif; ?>>3</option>
